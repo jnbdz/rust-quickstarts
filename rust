@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-podman run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1.60.0 rustc ${@}
+podman run --rm \
+	-v "${PWD}":/usr/src/myapp \
+	-w /usr/src/myapp \
+	rust:1.60.0 ${@}
