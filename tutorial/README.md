@@ -59,5 +59,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 ### Podman
 I created a BASH script with this command in it in mydotfiles repo.
 ```bash
-podman run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1.60.0 rustc ${@}
+podman run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1.60.0 ${@}
 ```
