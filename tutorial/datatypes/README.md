@@ -51,7 +51,7 @@ Unsigned: Can only have positive value.
 
 Interger types: 
 | Sr.No.  | Size | Signed | Unsigned |
---------------------------------------
+|---------|------|--------|----------|
 | 1       | 8 bit | i8    | u8       |
 | 2       | 16 bit | i16  | u16      |
 | 3       | 32 bit | i32  | u32      |
