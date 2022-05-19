@@ -1,4 +1,4 @@
-# Data Type | Rust | Tutorial
+# Variables | Rust | Tutorial
 ## Naming rules
 * Must begin with: 
     - Letters
