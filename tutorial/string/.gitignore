@@ -1,2 +1,4 @@
 trim
 split_whitespace
+split
+chars

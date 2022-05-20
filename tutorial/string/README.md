@@ -194,5 +194,56 @@ token 4 amazing
 
 `split()`
 ```rust
+fn main() {
+   let user = "Bob, Smith, BigBurgers";
 
+   for token in user.split(","){
+      println!("token is {}",token);
+   }
+
+   // Vector (stored)
+   println!("\n");
+   let details:Vec<&str>= user.split(",").collect();
+   println!("firstName is {}", details[0]);
+   println!("lastname is {}", details[1]);
+   println!("company is {}", details[2]);
+}
+```
+
+Output: 
+```
+token is Bob
+token is  Smith
+token is  BigBurgers
+
+
+firstName is Bob
+lastname is  Smith
+company is  BigBurgers
+                       
+```
+
+`chars()`
+```rust
+fn main(){
+   let name = "Bob Smith".to_string();
+
+   for c in name.chars(){
+      println!("{}", c);
+   }
+}
+```
+
+Output: 
+```
+B
+o
+b
+ 
+S
+m
+i
+t
+h
+ 
 ```
