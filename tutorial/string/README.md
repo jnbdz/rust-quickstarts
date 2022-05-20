@@ -247,3 +247,24 @@ t
 h
  
 ```
+
+## Concatenation of Strings with operator `+`
+- It uses an add method (`add(self, &str)->String {}` it uses self and a reference to the second string object)
+
+```rust
+fn main(){
+   let firstname = "Bob ".to_string();
+   let lastname = "Smith".to_string();
+
+   let n3 = firstname + &lastname;
+   println!("{}", fullname);
+}
+```
+
+Output: 
+```
+Bob Smith
+```
+
+## Type casting
+Just use `.to_strin()`.
