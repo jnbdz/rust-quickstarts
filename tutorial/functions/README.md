@@ -51,10 +51,36 @@ The value of num is: 10
 
 By reference: 
 ```rust
+fn main() {
+   let mut num:i32 = 10;
+   mutate_num(&mut num);
+   println!("The value of num is: {}", num);
+}
 
+fn mutate_num(param_num:&mut i32) {
+   *param_num = 0; // reference
+}
+```
+> `*` is called *dereferencing*. It access the data in the memory.
+
+Output: 
+```
+The value of num is: 0
+```
+
+String passing in a function: 
+```rust
+fn main() {
+   let name:String = String::from("Bob Smith");
+   show(name); 
+}
+
+fn show(p_name:String) {
+   println!("p_name value is: {}", p_name);
+}
 ```
 
 Output: 
 ```
-
+p_name value is: Bob Smith
 ```
