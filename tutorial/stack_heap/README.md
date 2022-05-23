@@ -33,3 +33,24 @@ A program's memory can be allocated with:
 - If you pass `let a = something; let a2 = a;` it throw an error **if you call on a instead of a2 because the memory is transfered**. Rust undertand that you are trying to get two owners to point to the same memory.
     - This is the same behaviour for when you use a function and pass a value in it. The **ownership is changed hands**.
 - Exception for *primitive types*! You can have the same value with multiple variables.
+
+## Borrowing
+- Ownership can be trensferred temporaily to an entity and then returned to the original owner
+- Achieved by passing a reference to the variable *(& var_name)*
+- After the function executes the original variable regains ownership
+
+Example: 
+```rust
+fn main() {
+   let a = vec![10, 20, 30];
+   print_a(&a);
+   println!("Printing the value from main() a[0]={}", a[0]);
+}
+
+fn print_a(x:&Vec<i32>) {
+   println!("Inside print_vector function {:?}", x);
+}
+```
+
+## References that are mutable
+- 
