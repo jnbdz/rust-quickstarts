@@ -1,7 +1,7 @@
+<img src="assets/Rust_programming_language_black_logo.svg" alt="Rust progamming logo" style="width: 160px;" align="right">
+
 # rust-quickstarts
 Quickstart for Rust.
-
-![](./assets/Rust_programming_language_black_logo.svg)
 
 ## Cargo Notes
 When in dev: 
