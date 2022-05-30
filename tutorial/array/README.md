@@ -67,3 +67,15 @@ const N: usize = 37;
 let arr = [0; N];
 ```
 Important! You cannot use a var `let` compared to `const`.
+
+**Array slice**
+```rust
+let numbers = [1, 2, 20, 4];
+let slice: &[i32] = &numbers[1..3];
+println!("Slice: {:?}", slice);
+```
+
+Output: 
+```
+Slice: [1, 2]
+```
