@@ -56,6 +56,9 @@ enum Option<T> {
    None     // Used to return null, as Rust does not have `null`
 }
 ```
+- `<T>` represent any data type
+- When data can be return it returns `Some(T)`
+
 Example: 
 ```rust
 fn main() {
@@ -79,8 +82,38 @@ Some(true)
 ```
 
 ## `match` statement with `enum`
+- Used to compare values in a `enum`
+Example: 
+```rust
+enum Gender {
+    Female,
+    Male
+}
+
+fn print_gender(g:Gender) {
+    match g {
+        Gender::Female => {
+            println!("It's a female!");
+        }
+        Gender::Male => {
+            println!("It's a male!");
+        }
+    }
+}
+
+fn main() {
+    print_gender(Gender::Female);
+    print_gender(Gender::Male);
+}
+```
+Output: 
+```
+It's a female!
+It's a male!
+```
 
 ## `match` with `Option`
+
 
 ## `match` and `enum` with data types
 
