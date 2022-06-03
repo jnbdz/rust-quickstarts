@@ -19,8 +19,64 @@ fn main() {
 > Note: `#[derive(Debug)]` is an attribute used to suppress the error *trait std::fmt::Debug is not implemented for Genders*
 
 ## `struct` and `enum`
+- `derive` attribute auto creates the impl to make the `struct` printable with `fmt::Debug`
+Example: 
+```rust
+#[derive(Debug)]
+enum Gender {
+   Male,
+   Female
+}
+
+#[derive(Debug)]
+struct Person {
+   name:String,
+   gender:Gender
+}
+
+fn main() {
+   let p = Person {
+      name:String::from("Toronto"),
+      gender:Gender::Female
+   };
+   [...]
+}
+```
 
 ## `enum` - `Option`
+- `Option` is a predefined `enum` in Rust standard lib
+- Use `None` instead of `null` keyword
+
+> Note: Rust does not support the `null` keyword
+
+The `Option` `enum`: 
+```rust
+enum Option<T> {
+   Some(T), // Used to return a value
+   None     // Used to return null, as Rust does not have `null`
+}
+```
+Example: 
+```rust
+fn main() {
+   let result = is_even(3);
+   println!("{:?}", result);
+   println!("{:?}", is_even(30));
+}
+
+fn is_even(no:i32)->Option<bool> {
+   if no%2 == 0 {
+      Some(true)
+   } else {
+      None
+   }
+}
+```
+Output: 
+```
+None
+Some(true)
+```
 
 ## `match` statement with `enum`
 
