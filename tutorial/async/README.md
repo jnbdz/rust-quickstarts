@@ -14,3 +14,6 @@
     
 
 > NOTE: Concurrent programming is less mature and "standardized" than regular, sequential programming. 
+
+## Resources
+- [Why Async? - Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/01_getting_started/02_why_async.html)
