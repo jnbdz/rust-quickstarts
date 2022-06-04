@@ -1,4 +1,4 @@
-# Conditions | Rust | Tutorial
+# Array | Rust | Tutorial
 - Sequential memory blocks
 - Static (cannot be resized)
 - Array element is a memory block
