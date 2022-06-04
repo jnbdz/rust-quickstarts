@@ -113,7 +113,60 @@ It's a male!
 ```
 
 ## `match` with `Option`
+```rust
+fn main() {
+   match is_even(5) {
+      Some(data) => {
+         if data==true {
+            println!("Even no");
+         }
+      },
+      None => {
+         println!("not even");
+      }
+   }
+}
 
+fn is_even(no:i32)->Option<bool> {
+   if no%2 == 0 {
+      Some(true)
+   } else {
+      None
+   }
+}
+```
+Output: 
+```
+not even
+```
 
 ## `match` and `enum` with data types
+```rust
+#[derive(Debug)]
+enum User {
+   ID(i32),
+   Name(String)
+}
 
+fn main() {
+   let u1 = User::Name(String::from("Jack Smith"));
+   let u2 = User::ID(100);
+   println!("{:?}", u1);
+   println!("{:?}", u2);
+
+   match u1 {
+      User::Name(val) => {
+         println!("{}", val);
+      }
+      User::ID(val) => {
+         println!("{}", val);
+      }
+   }
+}
+```
+Output: 
+```
+Name("Jack Smith")
+ID(100)
+Jack Smith
+```
