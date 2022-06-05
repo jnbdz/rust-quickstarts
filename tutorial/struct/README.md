@@ -98,3 +98,14 @@ fn main() {
    p.display();
 }
 ```
+## `tuple` `struct`
+```struct
+struct Color(u8, u8, u8);
+let mut c = Color(255, 0, 0);
+c.0 = 200;
+println!("Color: {} {} {}", c.0, c.1, c.2);
+```
+Output: 
+```
+Color: 200 0 0
+```
