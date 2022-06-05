@@ -1,4 +1,5 @@
-# Constant | Rust | Tutorial
+# Functions | Rust | Tutorial
+- To have a return do **not** add the `;` at the end of the line
 
 Examples: 
 ```rust

@@ -1,4 +1,4 @@
-# Loops
+# Loops | Rust | Tutorial
 - `while`
 - `loop`
 - `for`
