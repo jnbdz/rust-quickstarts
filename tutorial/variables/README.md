@@ -10,6 +10,8 @@
 * Upper and lowercase letters
 * Case-sensitive
 
+> NOTE: For none premitive values (e.g.: vec) you need to use pointers.
+
 ## Syntax
 - Data types are optional.
 - It is inferred by the value assigned.
