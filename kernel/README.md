@@ -1,4 +1,7 @@
 # Kernel | Rust | Quickstarts
+
+## Windows
+
 When coding for the kernel you cannot run this: 
 ```rust
 fn main() {
@@ -64,5 +67,59 @@ pub extern "system" fn driver_entry() -> u32 {
 	0 /* STATUS_SUCCESS */
 }
 ```
+- The runtime needs to be called before the entry point (unsure)
+- The entry point is the first thing that's called in a kernel module
+- `0` that is being returned in the example means **success**
+- `extern "system"` is to make sur the correct register is used for the returned value
 
+```ini
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+``` 
 
+```ini
+[build]
+target = "x86_64-pc-windows-msvc"
+
+rustflags = [
+    # Pre Link args
+    "-Z", "pre-link-arg=/NOLOGO",
+    "-Z", "pre-link-arg=/NXCOMPAT",
+    "-Z", "pre-link-arg=/NODEFAULTLIB",
+    "-Z", "pre-link-arg=/SUBSYSTEM:NATIVE",
+    "-Z", "pre-link-arg=/DRIVER",
+    "-Z", "pre-link-arg=/DYNAMICBASE",
+    "-Z", "pre-link-arg=/MANIFEST:NO",
+
+    # Post Link Args
+    "-C", "link-arg=/OPT:REF,ICF",
+    "-C", "link-arg=/ENTRY:driver_entry",
+    "-C", "link-arg=/MERGE:.edata=.rdata",
+    "-C", "link-arg=/MERGE:.rustc=.data",
+    "-C", "link-arg=/INTEGRITYCHECK",
+]
+```
+- This is adjusting the linker settings
+
+```rust
+let windows_kits_dir = get_windows_kits_dir().unwrap();
+let km_dir = get_km_dir(&windows_kits_dir).unwrap();
+let target = var("TARGET").unwrap();
+
+let arch = if target.contains("x86_64") {
+    "x64"
+} else if target.contains("i686") {
+    "x86"
+} else {
+    panic!("Only support x86_64 and i686!");
+};
+
+let lib_dir = km_dir.join(arch);
+println!(
+    "cargo:rustc-link-search=native={}",
+    lib_dir.to_str().unwrap()
+);
+```
+
+## Linux
