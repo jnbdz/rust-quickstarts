@@ -121,5 +121,53 @@ println!(
     lib_dir.to_str().unwrap()
 );
 ```
+- It looks for the Windows drivers (kits)
+- It also selects the right platform
+- This will help with calling kernel APIs
+
+```rust
+pub type PVOID = *mut core::ffi::c_void;
+
+extern "system" {
+    pub fn MmIsAddressValid(VirtualAddress: PVOID) -> bool;
+}
+```
+- Defines the function ourself
+- *page fault* is handle here (it means when an address cannot be found)
+- If the address is valid the function will return true
+- *PVOID* it is usually used by Windows for addresses easier to copy paste
+
+Use the function: 
+```rust
+let is_valid = unsafe { MmIsAddressValid(0 as _) };
+
+log!("MmIsAddressValid(0) returned %i", is_valid as u64);
+```
+- `unsafe` is used because Rust cannot verify if that function is actually there (and we can just past zero as a default)
+- At the end it is printed
+
+The `log` macro code: 
+```rust
+pub use winapi::km::wdm::DbgPrint;
+
+#[macro_export]
+macro_rules! log {
+    ($string: expr) => {
+        unsafe {
+            $crate::DbgPrint(concat!("[>] ", $string, "\0").as_ptr())
+        }
+    };
+
+    ($string: expr, $($x:tt)*) => {
+        unsafe {
+            $crate::DbgPrint(concat!("[>] ", $string, "\0").as_ptr(), $($x)*)
+        }
+    };
+}
+```
+- `DbgPrint` it prints to the output
+- The first is for printing just a dtring the second is for string plus the arguments
+- A prefix is added so to known where it starts (could be "[>] ")
+
 
 ## Linux
