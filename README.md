@@ -15,3 +15,6 @@ cargo build --release
 ```
 
 **Source:** https://doc.rust-lang.org/cargo/guide/creating-a-new-project.html (bottom)
+
+## Get Help!
+- [rust-lang | Zulip](https://rust-lang.zulipchat.com/)
