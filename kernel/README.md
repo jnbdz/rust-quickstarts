@@ -15,8 +15,24 @@ fn main() {
 	println!("Hello World!");
 }
 ```
-
 But this will throw errors.
+
+```
+error: cannot find macro `println` in this scope
+ --> no_std_helloworld.rs:4:2
+  |
+4 |     println!("Hello World!");
+  |     ^^^^^^^
+
+error: language item required, but not found: `eh_personality`
+  |
+  = note: this can occur when a binary crate with `#![no_std]` is compiled for a target where `eh_personality` is defined in the standard library
+  = help: you may be able to compile for a target that doesn't need `eh_personality`, specify a target with `--target` or in `.cargo/config`
+
+error: `#[panic_handler]` function required, but not found
+
+error: aborting due to 3 previous errors
+```
 
 When it panics so we need to catch it (since they are no consol in the kernel).
 
