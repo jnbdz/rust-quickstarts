@@ -1,4 +1,13 @@
 # Rust | Tutorial
+In this directory I put my notes on Rust with code examples.
+
+## Quick notes
+- `'static` or `'` following any letters it means: lifetime (https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html) (https://stackoverflow.com/questions/22048673/what-are-the-identifiers-denoted-with-a-single-apostrophe)
+- `<T>` or `fn something<T>(list: &[T]) -> T {`-> Generic data type (https://doc.rust-lang.org/book/ch10-01-syntax.html)
+- `dyn` -> Is a *keyword* to dynamically dispatch calls to methods associated to a `Trait` (unsure) (https://doc.rust-lang.org/std/keyword.dyn.html)
+- `unsafe {` -> This might be used when you are calling functions that might not exist or cannot be validated by Rust at compile time. It is often used for more advance sys calls. (https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)
+- `Box<T>` -> https://doc.rust-lang.org/book/ch15-01-box.html
+
 Note: 
 > Cargo is the package manager for Rust.
 ## Introduction
