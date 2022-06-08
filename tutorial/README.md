@@ -6,7 +6,9 @@ In this directory I put my notes on Rust with code examples.
 - `<T>` or `fn something<T>(list: &[T]) -> T {`-> Generic data type (https://doc.rust-lang.org/book/ch10-01-syntax.html)
 - `dyn` -> Is a *keyword* to dynamically dispatch calls to methods associated to a `Trait` (unsure) (https://doc.rust-lang.org/std/keyword.dyn.html)
 - `unsafe {` -> This might be used when you are calling functions that might not exist or cannot be validated by Rust at compile time. It is often used for more advance sys calls. (https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)
-- `Box<T>` -> https://doc.rust-lang.org/book/ch15-01-box.html
+- `Box<T>` -> Smart Pointers (https://doc.rust-lang.org/book/ch15-01-box.html)
+- `Rc<T>` -> Smart Pointers
+- `RefCell<T>` -> Smart Pointers
 
 Note: 
 > Cargo is the package manager for Rust.
