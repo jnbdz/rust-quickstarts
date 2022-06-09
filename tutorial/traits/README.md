@@ -56,6 +56,16 @@ Typecasting:
 impl From<u8> for SquareContent { [...]
 ```
 
+```rust
+// Rust is smart enough that it knows that it needs the default of `SquareContent` default value based on what is on the right.
+assert_eq!(SquareContent::Empty, Default::default());
+```
+
+```rust
+// Rust knows that from needs a `u8` value because of the trait
+assert_eq!(SquareContent::X, SquareContent::from(1));
+```
+
 ## Example: *Tic Toc Toe* 
 
 
