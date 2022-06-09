@@ -17,3 +17,8 @@
     - `String`
     - `Vec<T>`
 
+## `Box<T>`
+
+**Sources:** 
+- [The Box Smart Pointer in Rust | YouTube](https://www.youtube.com/watch?v=m76sRj2VgGo)
+- [Using Box&lt;T&gt; to Point to Data on the Heap - The Rust Programming Language | rust-lang.org](https://doc.rust-lang.org/book/ch15-01-box.html)
