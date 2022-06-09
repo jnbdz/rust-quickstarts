@@ -23,6 +23,9 @@ fn main() {
     let _result = c.get_answer();
 }
 ```
+What the looks likes once translated to Assembly code: 
+![](./assets/rust-traits-simple-example-assembly.png)
+
 
 ## Resources
 - [Rust Linz, July 2021 - Rainer Stropek - Traits, not your grandparents' interfaces | YouTube](https://www.youtube.com/watch?v=B0fL3WmJZsc)
