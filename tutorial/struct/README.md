@@ -109,3 +109,9 @@ Output:
 ```
 Color: 200 0 0
 ```
+
+## Unit `struct`
+- Unit `struct` is just an empty `struct`
+```rust
+pub struct DeepMachine;
+```
