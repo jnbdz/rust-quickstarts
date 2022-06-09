@@ -1,6 +1,8 @@
 # Traits | Tutorial | Rust | Quickstarts
 - 
-
+- You can define traits on `enum`
+- They are system `Traits`
+    - `Default` -> 
 
 Basic example: 
 ```rust
@@ -25,6 +27,37 @@ fn main() {
 ```
 What the looks likes once translated to Assembly code: 
 ![](./assets/rust-traits-simple-example-assembly.png)
+(You can use Rust playground to get the Assembly code)
+
+Things that you notice: 
+- The *interface* was gone
+- The only trace remaning is the name `<playground::DeepThought [...]`
+- So what this means is that it is *zero cost* because it doesn't really exist at runtime
+
+## Traits on `enum`
+```rust
+// Everything in the () are `Traits`
+// This attribute does a auto implementation
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+pub enum SquareContent {
+    Empty,
+    X,
+    O,
+}
+
+// `Default` is a trait from the standard lib
+impl Default for SquareContent { [...]
+```
+
+Typecasting: 
+```rust
+// `From<u8>` is for typecasting
+// It means I want to generate a SquareContent from a unsigned byte from a eight bits
+impl From<u8> for SquareContent { [...]
+```
+
+## Example: *Tic Toc Toe* 
+
 
 
 ## Resources
