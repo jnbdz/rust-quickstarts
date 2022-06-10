@@ -77,3 +77,4 @@ podman run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp rust:1.60.0 ${@}
 
 ## Resources
 - [Rust Sandbox | bradtraversy | GitHub](https://github.com/bradtraversy/rust_sandbox) - Great basic example to learn from
+- [rust-lang/rustlings: Small exercises to get you used to reading and writing Rust code! | GitHub](https://github.com/rust-lang/rustlings) - crab Small exercises to get you used to reading and writing Rust code!
