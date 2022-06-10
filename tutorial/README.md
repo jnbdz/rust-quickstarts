@@ -10,6 +10,7 @@ In this directory I put my notes on Rust with code examples.
 - `Rc<T>` -> Smart Pointers
 - `RefCell<T>` -> Smart Pointers
 - `r#` -> [Tokens](https://doc.rust-lang.org/reference/tokens.html#raw-string-literals) is for *Raw string literals*
+- `_` underscore -> [StackOverflow](https://stackoverflow.com/questions/48361537/why-do-underscore-prefixed-variables-exist), you can also checkout the example. In the root of tutorial.
 
 Note: 
 > Cargo is the package manager for Rust.
