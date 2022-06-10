@@ -9,6 +9,7 @@ In this directory I put my notes on Rust with code examples.
 - `Box<T>` -> Smart Pointers (https://doc.rust-lang.org/book/ch15-01-box.html)
 - `Rc<T>` -> Smart Pointers
 - `RefCell<T>` -> Smart Pointers
+- `r#` -> [Tokens](https://doc.rust-lang.org/reference/tokens.html#raw-string-literals) is for *Raw string literals*
 
 Note: 
 > Cargo is the package manager for Rust.
