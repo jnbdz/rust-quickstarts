@@ -74,3 +74,6 @@ assert_eq!(SquareContent::X, SquareContent::from(1));
 - [Rust Linz, July 2021 - Rainer Stropek - Traits, not your grandparents' interfaces | YouTube](https://www.youtube.com/watch?v=B0fL3WmJZsc)
     - [Traits - Not Your Grandparents' Interfaces | Slides.com](http://slides.com/rainerstropek/rust-traits/fullscreen)
     - [Tic Tac Toe (example) | rust-samples | GitHub](https://github.com/rstropek/rust-samples/tree/master/tictactoe)
+### Rust By Example
+- [From and Into - Rust By Example](https://doc.rust-lang.org/rust-by-example/conversion/from_into.html)
+- [TryFrom and TryInto - Rust By Example](https://doc.rust-lang.org/rust-by-example/conversion/try_from_try_into.html)
