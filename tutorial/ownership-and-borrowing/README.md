@@ -50,7 +50,7 @@ To better understand you need to look into **Stack and Heap**:
     - Scope: 
         - At the end of the `}` the scope ends (a var will be cleared out) (Also known as *LIFO*)
         - Even a *if* statement has a scope
-        - **LIFE:** Last In, First Out
+        - **LIFO:** Last In, First Out
 ##### Example
 ```rust
 fn main() {
