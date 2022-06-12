@@ -39,7 +39,7 @@ This occures because `var_a` has given it's ref to `var_b`.
 ### Stack vs Heap
 To better understand you need to look into **Stack and Heap**: 
 
-### Stack
+#### STACK
 - Stack
     - Fast memory creation and retrieval
     - All about speed!!!
@@ -48,10 +48,10 @@ To better understand you need to look into **Stack and Heap**:
     - Rust uses *stack* by default for its memory needs
     - The data is actually store next too each other on the hardware
     - Scope: 
-        - At the end of the `}` the scope ends (a var will be cleared out)
+        - At the end of the `}` the scope ends (a var will be cleared out) (Also known as *LIFO*)
         - Even a *if* statement has a scope
-        - 
-#### Example
+        - **LIFE:** Last In, First Out
+##### Example
 ```rust
 fn main() {
     let stack_i8: i8 = 10;
@@ -67,5 +67,24 @@ What do the vars have in common:
 > *NOTE:* Collections, vectors, and Strings cannot be *Stack*.
 > Because they can change in size.
 > Exception: Is the *Array* because it is fixed (it is known at compile time).
+
+#### HEAP
+- Flexible
+- Memory that can grow in size (e.g.: Vectors, HashMap, Strings, etc)
+- Runtime performance cost
+- Memory can live beyond the *scope* that created it
+- Memory is auto. recaptured when the last *owner* goes out of scope
+
+##### Example
+```rust
+fn main() {
+    let heap_vector: Vec<i8> = Vec::new(); // You can always use: `vec![4, 3];`
+    let heap_string: String = String::from("Howdy"); // You can **never** allocate a `String` onto a Stack
+    let heap_i8: Box<i8> = Box::new(30); // 
+}
+```
+
+> **NOTE:** `String` is actually a collection of *u8* under the hood.
+> Collections always need the flexibility to grow (explains why `String` uses *Heap*).
 
 
