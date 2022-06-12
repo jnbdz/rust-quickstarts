@@ -40,17 +40,16 @@ This occures because `var_a` has given it's ref to `var_b`.
 To better understand you need to look into **Stack and Heap**: 
 
 #### STACK
-- Stack
-    - Fast memory creation and retrieval
-    - All about speed!!!
-    - Memory management is very easy
-    - The memory of the var is automatically recaptured by the program after the var gets out of *scope*
-    - Rust uses *stack* by default for its memory needs
-    - The data is actually store next too each other on the hardware
-    - Scope: 
-        - At the end of the `}` the scope ends (a var will be cleared out) (Also known as *LIFO*)
-        - Even a *if* statement has a scope
-        - **LIFO:** Last In, First Out
+- Fast memory creation and retrieval
+- All about speed!!!
+- Memory management is very easy
+- The memory of the var is automatically recaptured by the program after the var gets out of *scope*
+- Rust uses *stack* by default for its memory needs
+- The data is actually store next too each other on the hardware
+- Scope: 
+    - At the end of the `}` the scope ends (a var will be cleared out) (Also known as *LIFO*)
+    - Even a *if* statement has a scope
+    - **LIFO:** Last In, First Out
 ##### Example
 ```rust
 fn main() {
