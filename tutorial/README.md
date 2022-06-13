@@ -11,6 +11,7 @@ In this directory I put my notes on Rust with code examples.
 - `RefCell<T>` -> Smart Pointers
 - `r#` -> [Tokens](https://doc.rust-lang.org/reference/tokens.html#raw-string-literals) is for *Raw string literals*
 - `_` underscore -> [StackOverflow](https://stackoverflow.com/questions/48361537/why-do-underscore-prefixed-variables-exist), you can also checkout the example. In the root of tutorial.
+- **fat pointer:** means references and raw pointers *dynamically sized types (DSTs)* (slices or trait objects) [rust - What is a &quot;fat pointer&quot;? - Stack Overflow](https://stackoverflow.com/questions/57754901/what-is-a-fat-pointer)
 
 Note: 
 > Cargo is the package manager for Rust.
