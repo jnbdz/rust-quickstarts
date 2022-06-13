@@ -52,8 +52,8 @@ type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
 ```
 - [`type`](https://doc.rust-lang.org/reference/items/type-aliases.html) - Also known as [Type aliases](https://doc.rust-lang.org/reference/items/type-aliases.html). 
 - [`Box<>`](https://doc.rust-lang.org/book/ch15-01-box.html) - Is a [Smart Pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html) for allocating values on the heap. [Examples - Box, stack and heap](https://doc.rust-lang.org/rust-by-example/std/box.html), [Box in std::boxed - Rust](https://doc.rust-lang.org/std/boxed/struct.Box.html)
-    - `dyn` - 
-    - `std::error::Error` - 
+    - [`dyn`](https://doc.rust-lang.org/std/keyword.dyn.html) - Is a keyword. For prefixing of a [trait object](https://doc.rust-lang.org/book/ch17-02-trait-objects.html) type.
+    - [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html) - Is a trait representing the basic expectations for error values, values of type `E` in [`Result<T, E>`](https://doc.rust-lang.org/std/result/enum.Result.html).
     - `Send` - 
     - `Sync` - 
     - `'static` - 
