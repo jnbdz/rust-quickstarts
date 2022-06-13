@@ -54,9 +54,9 @@ type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
 - [`Box<>`](https://doc.rust-lang.org/book/ch15-01-box.html) - Is a [Smart Pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html) for allocating values on the heap. [Examples - Box, stack and heap](https://doc.rust-lang.org/rust-by-example/std/box.html), [Box in std::boxed - Rust](https://doc.rust-lang.org/std/boxed/struct.Box.html)
     - [`dyn`](https://doc.rust-lang.org/std/keyword.dyn.html) - Is a keyword. For prefixing of a [trait object](https://doc.rust-lang.org/book/ch17-02-trait-objects.html) type.
     - [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html) - Is a trait representing the basic expectations for error values, values of type `E` in [`Result<T, E>`](https://doc.rust-lang.org/std/result/enum.Result.html).
-    - `Send` - 
-    - `Sync` - 
-    - `'static` - 
+    - [`Send`](https://doc.rust-lang.org/std/marker/trait.Send.html) - Types that can be transferred across thread boundaries.
+    - [`Sync`](https://doc.rust-lang.org/std/marker/trait.Sync.html) - Types for which it is safe to share references between threads.
+    - [`'static`](https://doc.rust-lang.org/std/keyword.static.html) - [Examples](https://doc.rust-lang.org/rust-by-example/scope/lifetime/static_lifetime.html), [Static items](https://doc.rust-lang.org/reference/items/static-items.html)
 
 ```rust
 #[tokio::main]
