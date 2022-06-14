@@ -18,5 +18,6 @@ cargo build --release
 
 ## Resources
 - [crates.io: Rust Package Registry](https://crates.io/)
+- [Playground](https://play.rust-lang.org/) - Try out your code. You can also analyze what the compiler is doing (e.g.: get the Assemble code)
 ### Get Help!
 - [rust-lang | Zulip](https://rust-lang.zulipchat.com/)
