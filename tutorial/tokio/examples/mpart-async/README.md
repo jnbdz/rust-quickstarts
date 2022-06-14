@@ -56,7 +56,14 @@ type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
     - [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html) - Is a trait representing the basic expectations for error values, values of type `E` in [`Result<T, E>`](https://doc.rust-lang.org/std/result/enum.Result.html).
     - [`Send`](https://doc.rust-lang.org/std/marker/trait.Send.html) - Types that can be transferred across thread boundaries.
     - [`Sync`](https://doc.rust-lang.org/std/marker/trait.Sync.html) - Types for which it is safe to share references between threads.
-    - [`'static`](https://doc.rust-lang.org/std/keyword.static.html) - [Examples](https://doc.rust-lang.org/rust-by-example/scope/lifetime/static_lifetime.html), [Static items](https://doc.rust-lang.org/reference/items/static-items.html)
+    - [`'static`](https://doc.rust-lang.org/std/keyword.static.html) - A static item is a value which is valid for the entire duration of your program (a `'static` lifetime). Also `static` - [Examples](https://doc.rust-lang.org/rust-by-example/scope/lifetime/static_lifetime.html), [Static items](https://doc.rust-lang.org/reference/items/static-items.html)
+        - similar to [`const`](https://doc.rust-lang.org/std/keyword.const.html)s
+            - contain value
+            - require type annotations
+            - can only be initialized with constant functions and values
+        - Different: 
+            - `static` represent a location in memory (similar to global var. You cna have ref. to `static` items, you can also modify them)
+            - You can use `mut` or not
 
 ```rust
 #[tokio::main]
