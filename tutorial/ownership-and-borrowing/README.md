@@ -39,6 +39,24 @@ This occures because `var_a` has given it's ref to `var_b`.
 ### Stack vs Heap
 To better understand you need to look into **Stack and Heap**: 
 
+- Every piece of information in memory has an owner
+- Can only be one owner at a time
+
+```rust
+let stack_i8: i8 = 10;
+[...]
+
+let heap_i8: Box<i8> = Box::new(30);
+
+let stack_i8_2 = stack_i8;
+println!("{}", stack_i8);
+println!("{}", stack_i8_2);
+
+let heap_i8_2 = heap_i8;
+println!("{}", heap_i8); // This will cause an error. Because the ownership is now in `heap_i8_2`
+println!("{}", heap_i8_2);
+```
+
 #### STACK
 - Fast memory creation and retrieval
 - All about speed!!!
