@@ -49,13 +49,31 @@ let stack_i8: i8 = 10;
 let heap_i8: Box<i8> = Box::new(30);
 
 let stack_i8_2 = stack_i8;
-println!("{}", stack_i8);
-println!("{}", stack_i8_2);
+println!("{}", stack_i8); // Stack copies are cheap. 
+println!("{}", stack_i8_2); // Both own different memory.
 
 let heap_i8_2 = heap_i8;
 println!("{}", heap_i8); // This will cause an error. Because the ownership is now in `heap_i8_2`
 println!("{}", heap_i8_2);
 ```
+A solution - borrowing: 
+```rust
+let heap_i8_2 = &heap_i8; // Added the `&`. This is what we call borrowing.
+println!("{}", heap_i8); // Now it works
+println!("{}", heap_i8_2);
+```
+Another solution - clone: 
+```rust
+let heap_i8_2 = heap_i8.clone(); // Clone creates a "copy" of the memory. WARNING! It is expensive on the heap.
+println!("{}", heap_i8); // Now it works
+println!("{}", heap_i8_2);
+```
+
+> **NOTE:** Avoid clones because of the costs.
+
+Reasons for this: 
+- Parallel
+- Concurrency issues such as "race conditions"
 
 #### STACK
 - Fast memory creation and retrieval
