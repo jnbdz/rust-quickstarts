@@ -108,7 +108,7 @@ What do the vars have in common:
 - Memory that can grow in size (e.g.: Vectors, HashMap, Strings, etc)
 - Runtime performance cost
 - Memory can live beyond the *scope* that created it
-- Memory is auto. recaptured when the last *owner* goes out of scope
+- Memory is auto. recaptured when the last *owner* goes out of scope (cleaned up)
 
 ##### Example
 ```rust
@@ -122,4 +122,18 @@ fn main() {
 > **NOTE:** `String` is actually a collection of *u8* under the hood.
 > Collections always need the flexibility to grow (explains why `String` uses *Heap*).
 
+## Example
+```rust
+#[allow(unused_variables)]
+fn main() {
+	let stack_f64: f64 = 1.;
+	let heap_f64: Box<f64> = Box::new(2.);
 
+	stack_procedure(stack_f64);
+	println!("In main stack {}", stack_f64);
+} // The vars will cleanup at this point of exec.
+
+fn stack_procedure(param: f64) {
+	println!("In stack_procedure with param {}", param);
+}
+```
